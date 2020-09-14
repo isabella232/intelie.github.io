@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Intelie Live Help (EN)</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body class="body-blue">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Intelie Live</span> <span class="text-bold">Help</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <section id="basics" class="doc-section">
+                                <h2 class="section-title">Basics</h2>
+                                <div id="streams"  class="section-block">
+                                    <h3 class="block-title">What is a stream?</h3>
+                                    <p>A stream is a time-indexed series of events, i.e. messages with data and a timestamp, that has a common type. For example, a temperature sensor would generate a stream of events of the type temperature, with the measurement every second and the sensor id. Intelie Live automatically generates streams as events are received.</p>
+
+                                    <p>You can also add, remove or edit stream properties through the web interface, within the "Configurations" menu.</p>
+
+                                    <div class="screenshot-holder">
+                                          <img class="img-responsive" src="assets/images/stream1.png" alt="screenshot"></a>
+                                    </div> 
+                                    
+                                    <p>Keep in mind that your user must have the proper authorization to do so.</p>
+
+                                </div><!--//section-block-->
+
+                                <div id="datasources"  class="section-block">
+                                    <h3 class="block-title">What is a datasource?</h3>
+                                    <p>Is a special type of stream that can use expressions to transform previous streams or datasources itselves into new datasources.</p>
+
+                                        <p>For example, you can create a datasource that using the Temperature stream measured in Fahrenheit , transforms it to Celsius, generating a TemperatureInCelsius datasource.</p>
+
+                                        <p>You could also create another datasource that would calculate the average temperature in Celsius, the max and minimum temperature over the last hour. Transforming the TemperatureInCelsius  datasource into a TemperatureBasicCalculations datasource.</p>
+
+                                        <p>The transformations over the data are expressed using the Intelie Pipes language. You can access the language reference and tutorial <a href="http//pipes.intelie.com" target="_blank">here.</a></p>
+
+                                        <p>The datasources are editable through the Configurations section. You must have proper autorizathion to add, edit or remove a datasource.</p>
+
+                                        <h6> In order to add a new datasource you must choose:</h6>
+                                        <ul>
+                                            <li>Title: the name that will appear on the datasource list;</li>
+
+                                            <li>Identifier: an unique identifier of the datasource, that will be reference in other datasources, widgets or rules. You cannot use spaces and other restrictions will be presented if found.</li>
+
+                                            <li>Perspective: work an organizer for all Intelie Live artifacts (rules, dashboards, datasources). It will be use to grant autorhization and to manage notifications;</li>
+
+                                            <li>Additional information: any additional informatio you might want to add;</li>
+
+                                            <li>Expression:</li> The main provider is Intelie Pipes, with means that you will need to write a Intelie Pipes expression to process the data. It is possible to have other providers that can be extended using the plugin functionality.
+
+                                        </ul>
+
+                                        <div class="screenshot-holder">
+                                          <img class="img-responsive" src="assets/images/datasource.png" alt="screenshot"></a>
+                                        </div> 
+
+
+
+                                    
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+
+                            <section id="access-permissions" class="doc-section">
+                                <h2 class="section-title">Access and Permissions</h2>
+                                
+                                <div id="roles"  class="section-block">
+                                    <h3 class="block-title">Roles</h3>
+                                    <p>Roles defines the access and editing permissions that the teams and users have. Intelie Live is already configured with a set of roles that can be tied to teams:</p>
+                                    <br/>
+
+                                    <h6>Admin</h6>
+                                    <p>The administrator has full authority over the system. He can add and delete users, conduct data purges, and other sensitive tasks.</p>
+                                    <br/>
+
+                                    <h6>Specialist</h6>
+                                    <p>The specialist is the system configurator. He has permission to manipulate data and create items in the system, for example, create new datasources, create and manage rules, create new dashboards, etc.</p>
+                                    <br/>
+
+                                    <h6>Operator</h6>
+                                    <p>The operator has access to the company environment, can see alerts, rules and dashboards, but can not modify them. It can also do data queries on the console.</p>
+                                    <br/>
+
+                                    <h6>External customer</h6>
+                                    <p>The external customer has access to the company environment, can see alerts, rules and dashboards, but can not modify them.</p>
+
+                                    <p>All of these preconfigured roles can be edited to meet the company's needs. In addition, new roles can be created.</p>
+
+                                    <p>To create a new team, you need to access the "Administration" tab, select "Access & Permissions", choose the "Roles" option and press "New role". You need to set some information about this new role:</p>
+
+                                    <ul>
+                                      <li>Name: Name that identifies the role</li>
+                                      <li>Permissions: Select the permissions that this role has</li>
+                                    </ul>
+
+                                </div><!--//section-block-->
+
+                                <div id="teams"  class="section-block">
+                                    <h3 class="block-title">Teams</h3>
+                                    <p>To give access to a set of dashboards and necessary functions to a group of people it is necessary to place them in a team. You can assign one or more roles to each team and create as many teams as you need.</p>
+
+                                    <p>To create a new team, you need to access the "Administration" tab, select "Access & Permissions", choose the "Teams" option and press "New team". You need to set some information about this new team:</p>
+
+                                    <ul>
+                                      <li>Name: Name that identifies the team</li>
+                                      <li>Team Roles: Defines the kind of access and editing permission that this team has</li>
+                                      <li>Perspectives: Defines which perspectives this team has access to</li>
+                                      <li>Users: You can assign more than one user to the same team.</li>
+                                    </ul>
+
+                                </div><!--//section-block-->
+
+                                <div id="users"  class="section-block">
+                                    <h3 class="block-title">Users</h3>
+                                    <p>Create new users when you want to give access to Live to a new person.</p>
+
+                                    <p>To create a new user, you need to access the "Administration" tab, select "Access & Permissions", choose the "Users" option and press "New user". You need to set some information about this new user:</p>
+
+                                    <ul>
+                                        <li>Name: Name that identifies the user</li>
+                                        <li>Email: Email address of the new user</li>
+                                        <li>Username: Username login of the new user</li>
+                                        <li>Teams: Defines which teams the new user is part of</li>
+                                    </ul>
+
+                                </div><!--//section-block-->
+
+                                <div id="perspectives"  class="section-block">
+                                    <h3 class="block-title">Perspectives</h3>
+                                    <p>A perspective includes a set of dashboards, rules and alerts that correspond to a particular subject. For example, Front Office and Back Office, each of these perspectives will have indicators pertinent to the subject. Although it is a mechanism of segregation of information, a team can have access to n perspectives within the system.</p>
+
+                                    <p>To create a new perspective, you need to access the "Configuration" tab, select "Perspectives" and the "New perspective" option. You need to set some information about this perspective:</p>
+
+                                    <ul>
+                                        <li>Name: Name that identifies the perspective</li>
+                                        <li>Additional information: Here you can write additional information about this perspective</li>
+                                        <li>Tags: Tags that identifies the perspective</li>
+                                    </ul>
+                                    
+                                    <p>You will find the perspectives list in the "Congifurations" section, outside Live Administration.</p>
+
+                                </div><!--//section-block-->
+
+
+                            </section><!--//doc-section-->
+
+
+                            <section id="dashboards" class="doc-section">
+                                <h2 class="section-title">Dashboards</h2>
+
+                                <div id="create-dashs"  class="section-block">
+                                    <h3 class="block-title">How to create dashboards</h3>
+
+                                    <p>You need to visualize the data in order to analyze it. For this, Intelie Live provides the creation of several charts in a dashboard. To create a new dashboard, you need to access the "Dashboards" tab and select the "New dashboard" option. It will be necessary to define a title and which perspective will have access to it.</p>
+
+                                    <p>The dashboard is created empty. You need to add charts to view the data. By default, when you create a dashboard, only you are allowed to view it. After you finish editing, you can change the visibility permission of the chart.</p>
+
+                                    <p>To add a chart, select "New chart" and choose the type to be created: Standard, HTML/SVG or import a chart from another dashboard.</p>
+
+                                    <div class="screenshot-holder">
+                                         <img class="img-responsive" src="assets/images/chart_opts.png" alt="screenshot"></a>
+                                    </div>
+
+
+                                </div><!--//section-block-->
+
+
+                            </section><!--//doc-section-->
+
+
+                            <section id="rules" class="doc-section">
+                                <h2 class="section-title">Rules</h2>
+
+                                <div id="create-rules"  class="section-block">
+                                    <h3 class="block-title">How to create rules</h3>
+
+                                    <p>To generate alerts and send notifications, you must create rules that define the type of situation that triggers the creation of alerts. For this reason you should create rules that represent the type of event that you want to monitor.</p>
+
+                                    <p>For example,if the calculated value using different sensors is above some threshold, you can be notified about the fact and take the necessary actions.</p>
+                                    <p>To create a new rule, you need to access the "Monitoring" tab, select "Rules" and the "New rule" option. You need to set some information about this rule:</p>
+
+                                    <ul>
+                                        <li>Name: Name that identifies the rule</li>
+                                        <li>Perspective: Defines the perspective to which all warnings of this rule will be sent.</li>
+                                        <li>Severity: Defines which teams will receive the warnings based on the severity of the rule.</li>
+                                        <li>Event text: This is the text that will be displayed when an alert of this type is issued.</li>
+                                        <li>Additional information: Here you can write additional information about this rule.</li>
+                                        <li>Status: If the rule is Active or Inactive. An Inactive rule does not trigger alerts.</li>
+                                        <li>Expression: It is the Pipes expression that describes your rule.</li>
+                                    </ul>
+
+                                    <div class="screenshot-holder">
+                                         <img class="img-responsive" src="assets/images/rule.png" alt="screenshot"></a>
+                                    </div>
+
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+
+
+                            <section id="extensibility" class="doc-section">
+                                <h2 class="section-title">Extensibility</h2>
+
+                                <div id="plugins"  class="section-block">
+                                    <h3 class="block-title">Plugins</h3>
+
+                                    <p>A plugin is a software package that can be installed into Intelie Live. The software must be packaged as a JAR (Java Archive) and will run on the same execution as Intelie Live.</p>
+
+                                    <p>A plugin can:</p>
+
+                                    <ul>
+                                         <li>Create a new function to be used within the Intelie Pipes language;</li>
+                                         <li>Create a new type of chart;</li>
+                                         <li>Create a complete new application;</li>
+                                         <li>Create a new type of integration;</li>
+                                         <li>Or any combination of the above;</li>
+                                    </ul>
+
+                                    <p>To be able to create a plugin you must follow a specific coding structure.</p>
+
+                                </div><!--//section-block-->
+
+                                <div id="install-plugins"  class="section-block">
+                                    <h3 class="block-title">Installing Plugins</h3>
+
+                                    <p>To install a plugin you must have administrative privileges. Go to the administration section of Intelie Live and click on "Plugins" at the left menu.</p>
+
+                                    <div class="screenshot-holder">
+                                         <img class="img-responsive" src="assets/images/adminway.png" alt="screenshot"></a>
+                                    </div>
+
+                                    <div class="screenshot-holder">
+                                         <img class="img-responsive" src="assets/images/plugins_list.png" alt="screenshot"></a>
+                                    </div>
+
+                                    <p>Click at the "Install a plugin" button on the upper left side and chose your plugin file.</p>
+
+                                    <p>After installation, you can check the details clicking on messages. It is also to start /stop, download or delete a plugin from the left side control buttons</p>
+
+                                    <div class="screenshot-holder">
+                                         <img class="img-responsive" src="assets/images/plugins_open.png" alt="screenshot"></a>
+                                    </div>
+
+
+                                </div><!--//section-block-->
+
+
+                            </section><!--//doc-section-->
+
+
+                            <section id="pipes" class="doc-section">
+                                <h2 class="section-title">Pipes</h2>
+
+                                <div id="learn-pipes"  class="section-block">
+                                    <h3 class="block-title">Learning Pipes</h3>
+
+                                    <p>Intelie Pipes is a distributed query language, specially suited for real time big data and stream analytics. With Intelie Pipes, you can write queries to create datasources, rules and visualizations in Intelie Live.</p>
+
+                                    <p>To learn Intelie Pipes, try our <strong><a href="https://pipes-tutorial.intelie.com/" target="_blank">Interactive Tutorial</a></strong> and take a look at <strong><a href="http://pipes.intelie.com/docs" target="_blank"> Pipes' Language Reference</a></strong>.
+
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+                            
+                            
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+
+                                <li>
+                                    <a class="scrollto" href="#basics">Basics</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#streams">What is a stream</a></li>
+                                        <li><a class="scrollto" href="#datasources">What is a datasource</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#access-permissions">Access and Permissions</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#roles">Roles</a></li>
+                                        <li><a class="scrollto" href="#teams">Teams</a></li>
+                                        <li><a class="scrollto" href="#users">Users</a></li>
+                                        <li><a class="scrollto" href="#perspectives">Perspectives</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                 <li>
+                                    <a class="scrollto" href="#dashboards">Dashboards</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#create-dashs">How to create dashboards</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#rules">Rules</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#create-rules">How to create rules</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#extensibility">Extensibility</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#plugins">Plugins</a></li>
+                                        <li><a class="scrollto" href="#install-plugins">Installing Plugins</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#pipes">Pipes</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#learn-pipes">Learning Pipes</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>     
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

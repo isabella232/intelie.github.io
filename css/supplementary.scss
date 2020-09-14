@@ -1,0 +1,209 @@
+$color-primary: #4e93ab;
+$color-primary-light: #7be0d8;
+$color-secondary: #59B8B0;
+$color-accent: orange;
+$color-offwhite: #F5F5F5;
+$gradient-default: linear-gradient(45deg, $color-primary 20%, $color-secondary 70%, $color-primary-light 100%);
+// $gradient-default: linear-gradient(45deg, $color-primary 30%, $color-secondary 80%, $color-accent 150%);
+$shadow-default: 0 4px 16px 0 rgba(0,0,0,0.1);
+$shadow-intense: 0 4px 20px 0 rgba(0,0,0,0.2);
+
+#body-home {
+  .bridging-gap .card-1 {
+    background: $gradient-default;
+    box-shadow: 5px 5px 0 0 #ffa50087;
+  }
+
+  .overlayhome {
+    height: 92vh;
+  }
+
+  .header-caption a {
+    background: $color-accent;
+    padding: 16px 20px 18px;
+    border: none;
+    box-shadow: $shadow-default;
+    font-size: 14px;
+    line-height: 14px;
+
+    .arrow {
+      position: initial;
+      display: inline-block;
+      margin-left: 12px;
+      color: $color-offwhite;
+      top: 11px;
+    }
+
+    &:hover {
+      background: darken($color-accent, 5%);
+      color: #e6e6e6;
+      box-shadow: $shadow-intense;
+    }
+  }
+}
+
+.primary-navigation a {
+  &:hover {
+    border-bottom: 3px solid $color-accent;
+  }
+}
+
+.secondary-navigation {
+  a {
+    // font-weight: bold;
+    &:hover {
+      color: darken($color-primary-light, 15%);
+      border-bottom: 3px solid $color-accent;
+    }
+  }
+
+  .cycle-pager-active a {
+    color: $color-offwhite;
+    border-bottom: 3px solid $color-accent;
+  }
+}
+
+.more-information .btn {
+  background: $color-accent;
+  // border-radius: 100px;
+  box-shadow: $shadow-default;
+
+  &:hover {
+    background: darken($color-accent, 5%);
+    box-shadow: $shadow-intense;
+  }
+}
+
+.rignet-company {
+  span {
+    display: block;
+    padding-left: 5px;
+    font-size: 0.8em;
+    text-align: left;
+  }
+
+  img {
+    display: block;
+    width: 60%;
+  }
+}
+// live
+#body-live {
+
+  .header-caption a {
+    background: $color-accent;
+    padding: 16px 20px 18px;
+    border: none;
+    box-shadow: $shadow-default;
+    font-size: 14px;
+    line-height: 14px;
+
+    .arrow {
+      position: initial;
+      display: inline-block;
+      margin-left: 12px;
+      color: $color-offwhite;
+      top: 11px;
+    }
+
+    &:hover {
+      background: darken($color-accent, 5%);
+      color: #e6e6e6;
+      box-shadow: $shadow-intense;
+    }
+  }
+
+  .section-usability {
+    background: $gradient-default;
+    .btn {
+      background: $color-accent;
+      padding: 16px 20px 18px;
+      border: none;
+      box-shadow: $shadow-default;
+      font-size: 14px;
+      line-height: 14px;
+
+      .arrow {
+        position: initial;
+        display: inline-block;
+        margin-left: 12px;
+        color: $color-offwhite;
+        top: 11px;
+      }
+
+      &:hover {
+        background: darken($color-accent, 5%);
+        color: #e6e6e6;
+        box-shadow: $shadow-intense;
+      }
+    }
+  }
+
+  .section-cases {
+    .case-1, .case-2 {
+      height: 300px;
+      background: $color-offwhite;
+      box-shadow: 5px 5px 0 0 #ffa50087;
+      margin-bottom: 8px;
+    }
+  }
+
+}
+
+// company
+
+#body-company {
+  .numbers {
+    .section-title {
+      color: $color-offwhite;
+    }
+
+    .data {
+      .item {
+        color: $color-offwhite;
+      }
+    }
+  }
+
+  .history {
+    .card {
+      .card-1 {
+        box-shadow: 5px 5px 0 0 #ffa50087;
+      }
+      .card-2 ul li::after {
+        border-color: $color-accent;
+      }
+    }
+  }
+
+  .featured-quote::before {
+    &::before {
+      background: $gradient-default;
+    }
+  }
+}
+//services
+#body-services {
+  #featured-clients .client-card {
+    // border-bottom: 3px solid $color-accent;
+    box-shadow: 5px 5px 0 0 #ffa50087;
+
+    .title {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 3px solid $color-accent;
+    }
+
+    .subtitle {
+      margin: 12px auto;
+    }
+  }
+
+  #services-platform .platform-item {
+    .title {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 3px solid $color-accent;
+    }
+  }
+}
